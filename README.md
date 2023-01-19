@@ -7,7 +7,7 @@
 
 ### Prebuilt
 
-[Release 탭](https://github.com/qwreey75/KawaiiMono/releases)에서 ttf 파일을 다운로드 받을 수 있습니다.  
+[Release 탭](https://github.com/qwreey75/KawaiiMono/releases/latest)에서 ttf 파일을 다운로드 받을 수 있습니다.  
 Release 에는 Nerd Fonts, Liga, 한중일 글립이 모두 포함된 완전한 완성본만 취급합니다  
 웹 폰트 등으로 사용하는 경우 용량 이슈로 직접 빌드를 통해 필요없는 기능을 제거해야합니다  
 
