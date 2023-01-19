@@ -1,7 +1,4 @@
 assets/
 **/__pycache__/
-KawaiiMonoRegularPatched.ttf
-KawaiiMonoRegularPatched.otf
-KawaiiMonoRegularPatched.woff
-KawaiiMonoRegularPatched.eot
+out/
 src/wget/__pycache__/

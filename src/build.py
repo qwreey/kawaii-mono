@@ -1,4 +1,5 @@
 import fontforge
+import os
 
 from . import NanumSquareNeo as NanumSquareNeoLoader
 from . import NotoMono as NotoMonoLoader
@@ -37,7 +38,13 @@ def build(config=None):
         notoMono.close()
 
     # 생성
-    kawaii.generate("kawaiiPatched.ttf")
+    if not os.path.exists("out"): os.mkdir("out")
+    kawaii.generate("out/"+"KawaiiMonoRegularPatched.ttf")
+
+    # KawaiiMonoRegularPatched.ttf
+    # KawaiiMonoRegularPatched.otf
+    # KawaiiMonoRegularPatched.woff
+    # KawaiiMonoRegularPatched.eot
 
     # 파일 닫기
     kawaii.close()
