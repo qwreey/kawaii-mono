@@ -21,6 +21,7 @@ def build(config=None):
         NanumSquareNeoLoader.pasteGlyphs(
             target=kawaii,baseSize=550,
             source=nanumSquareNeo)
+        nanumSquareNeo.close()
 
     if (config.get("CopyJapaneseGlyphs") or
         config.get("CopyCJKUnifiedIdeographs")):
@@ -32,14 +33,13 @@ def build(config=None):
             JapaneseGlyphs=config.get("CopyJapaneseGlyphs") or False,
             CJKUnifiedIdeographs=config.get("CopyCJKUnifiedIdeographs") or False,
             target=kawaii,baseSize=550,
-            source=nanumSquareNeo)
+            source=notoMono)
+        notoMono.close()
 
     # 생성
     kawaii.generate("kawaiiPatched.ttf")
 
     # 파일 닫기
-    notoMono.close()
-    nanumSquareNeo.close()
     kawaii.close()
 
 if __name__ == "__main__": build()

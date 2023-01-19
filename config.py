@@ -45,14 +45,14 @@ config = {
     # 노토 산스 모노에서 가타카나/히라가나
     # 글리프를 복사할 지에 대한 여부입니다
     # 한자는 포함하지 않습니다
-    "CopyJapaneseGlyphs": True,
+    "CopyJapaneseGlyphs": False,
 
     # TODO: 이 설정은 아직 동작하지 않습니다
     # 노토 산스 모노에서 CJK 공용 한자 글리프를
     # 복사할 지에 대한 여부입니다.
     # 폰트 용량이 매우 커집니다!!
     # 웹용 폰트의 경우 끄는것을 추천합니다
-    "CopyCJKUnifiedIdeographs": True,
+    "CopyCJKUnifiedIdeographs": False,
 
     # TODO: 이 설정은 아직 동작하지 않습니다
     # 라틴 글리프를 Hack 폰트에서 더 가져옵니다

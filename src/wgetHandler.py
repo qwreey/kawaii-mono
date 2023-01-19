@@ -1,4 +1,4 @@
-import wget
+from .wget import wget
 import math
 
 def bar_custom(current, total, width=80):
