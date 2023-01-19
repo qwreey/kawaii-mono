@@ -27,7 +27,7 @@ make build
 # License
 
 license 파일을 참고해주세요.
-submodule 을 제외한 이 리포지토리의 모든 파일은 (KawaiiMono**.sfd) 다음의 라이선스에 영향받습니다  
+submodule 을 제외한 이 리포지토리의 모든 파일은 (KawaiiMono**.sfd 포함한) 다음의 라이선스에 영향받습니다  
 
 | Permissions | Limitations | Conditions |
 |-------------|-------------|------------|
