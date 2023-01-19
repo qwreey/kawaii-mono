@@ -1,7 +1,11 @@
 
-# Building
+![KawaiiMono](images/fullscreen.png)
 
-## Linux 에서 (Ubuntu 추천)
+# KAWAII MONO
+
+## Building
+
+### Linux 에서 (Ubuntu 추천)
 
 **Dependence** : fontforge, python3 패키지를 받습니다  
 ```
@@ -20,11 +24,11 @@ make build
 ```
 리눅스에서 사용하는 경우, ~/.local/share/fonts 에 자동으로 ttf 파일을 복사하도록 `make install` 을 사용할 수도 있습니다  
 
-## Docking
+### Docking
 
 향후 추가 예정
 
-# License
+## License
 
 license 파일을 참고해주세요.
 submodule 을 제외한 이 리포지토리의 모든 파일은 (KawaiiMono**.sfd 포함한) 다음의 라이선스에 영향받습니다  
@@ -40,11 +44,11 @@ submodule 을 제외한 이 리포지토리의 모든 파일은 (KawaiiMono**.sf
 사용된 NanumSquareNeo 는 Naver 가 소유하며, OFL 라이선스를 따릅니다.  
 사용된 Nerd Fonts 글리프는 [여기](https://github.com/ryanoasis/nerd-fonts/blob/master/license-audit.md) 에서 라이선스 정보를 확인해 주세요.  
 
-# Issue
+## Issue
 
 가독성이나 미적인 토론(?) 은 이슈를 이용하거나 qwreey75@gmail.com 으로 메일링 할 수 있습니다.  
 
-# TODO
+## TODO
 
 1. 합자자를 추가합니다.
 2. 기울임 폰트를 추가합니다.
@@ -52,7 +56,7 @@ submodule 을 제외한 이 리포지토리의 모든 파일은 (KawaiiMono**.sf
 4. Nerd Fonts 를 지원합니다.
 5. B 와 같은 둥근 글리프의 가독성을 향상시킵니다.
 
-## 안 이루워질 TODO
+### 안 이루워질 TODO
 
 ~~일해라 쿼리~~
 
