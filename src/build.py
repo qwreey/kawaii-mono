@@ -13,7 +13,7 @@ def build(config=None):
     kawaii.encoding = 'UnicodeFull'
 
     # 한글 글리프 붇여넣기
-    if config.CopyKoreanGlyphs:
+    if config.get("CopyKoreanGlyphs"):
         # 나눔 스퀘어 네오 다운로드/불러오기
         nanumSquareNeo = fontforge.open(
             NanumSquareNeoLoader.getFontPath())
@@ -22,11 +22,17 @@ def build(config=None):
             target=kawaii,baseSize=550,
             source=nanumSquareNeo)
 
-    if config.CopyJPGlyphs or config.Copy:
+    if (config.get("CopyJapaneseGlyphs") or
+        config.get("CopyCJKUnifiedIdeographs")):
         # 노토 모노 다운로드/불러오기
         notoMono = fontforge.open(
             NotoMonoLoader.getFontPath())
-            
+        # 글리프 붇여넣기
+        NotoMonoLoader.pasteGlyphs(
+            JapaneseGlyphs=config.get("CopyJapaneseGlyphs") or False,
+            CJKUnifiedIdeographs=config.get("CopyCJKUnifiedIdeographs") or False,
+            target=kawaii,baseSize=550,
+            source=nanumSquareNeo)
 
     # 생성
     kawaii.generate("kawaiiPatched.ttf")

@@ -1,0 +1,3 @@
+[submodule "src/wget"]
+	path = src/wget
+	url = https://github.com/steveeJ/python-wget

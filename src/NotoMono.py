@@ -10,7 +10,7 @@ def getFontPath():
         wgetHandler.download(github_NotoSansMonoCJKkr,"assets/NotoMonoCJKkr.otf")
     return "assets/NotoMonoCJKkr.otf"
 
-def pasteGlyphs(target,source,baseSize=550):
+def pasteGlyphs(target,source,baseSize=550,JapaneseGlyphs=False,CJKUnifiedIdeographs=False):
     source.cidFlatten()
 
     def select(font):
