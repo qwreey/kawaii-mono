@@ -17,7 +17,7 @@ Release 에는 Nerd Fonts, Liga, 한중일 글립이 모두 포함된 완전한 
 ```
 sudo apt install fontforge python3
 ```
-*Ubuntu 에 기본설치되는 gnu make 또한 필요합니다.*
+*Ubuntu 에 기본설치되는 gnu make 또한 필요합니다.*  
 
 이 리포지토리를 받습니다  
 ```
