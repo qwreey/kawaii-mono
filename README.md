@@ -42,18 +42,36 @@ make build
 ## License
 
 [license 파일](https://github.com/qwreey75/KawaiiMono/blob/master/license)을 참고해주세요.
-submodule 을 제외한 이 리포지토리의 모든 파일은 (KawaiiMono**.sfd 포함한) 다음의 라이선스에 영향받습니다  
+submodule 과 assets 폴더에 자동 생성되는 파일들을 제외한 이 리포지토리의 모든 파일은 (KawaiiMono**.sfd 포함한) 다음의 라이선스에 영향받습니다  
 
 | Permissions | Limitations | Conditions |
 |-------------|-------------|------------|
 | ✅ Commercial use | ❎ Warranty | ❓ License and copyright notice |
-| ✅ Modification | ❎ Liability | |
 | ✅ Distribution | ❎ Being Rude | |
+| ✅ Modification | ❎ Russian, And supporting war | |
 | ✅ Private use | ❎ Copy without any modification | |
 
-사용된 Noto Mono 는 Google 이 소유하며, OFL 라이선스를 따릅니다.  
-사용된 NanumSquareNeo 는 Naver 가 소유하며, OFL 라이선스를 따릅니다.  
-사용된 Nerd Fonts 글리프는 [여기](https://github.com/ryanoasis/nerd-fonts/blob/master/license-audit.md) 에서 라이선스 정보를 확인해 주세요.  
+다음과 연관된 컨텐츠는 각각 개별적인 라이선스를 가집니다  
+**이 git 저장소에는 해당 컨텐츠를 직접적으로 포함하지는 않으나, 패치시 해당 컨텐츠를 다운로드 받아 패치 타겟 파일에 해당 컨텐츠를 붙여넣으므로 빌드 출력 결과 파일에는 해당 라이선스가 포함됩니다.**  
+컨텐츠의 포함 여부는 `config.py` 파일의 상황에 따라서 달라질 수 있습니다.
+
+> 사용된 Noto Mono 는 Google 이 소유하며, OFL 라이선스를 따릅니다.  
+> 사용된 NanumSquareNeo 는 Naver 가 소유하며, OFL 라이선스를 따릅니다.  
+> 사용된 Nerd Fonts 글리프는 [여기](https://github.com/ryanoasis/nerd-fonts/blob/master/license-audit.md) 에서 라이선스 정보를 확인해 주세요.  
+
+OFL 라이선스의 폰트가 패치에 사용된 경우, 그 폰트가 웹폰트와 같이 배포의 형태로 사용되려면 필수는 아니지만 패치 소스의 라이선스 표기가 권장됩니다.  
+([SIL 공식 사이트 OFL-FAQ](https://scripts.sil.org/OFL-FAQ_web)의 문항 1.1.2, 사용에 대한 표기가 필수사항은 아님)  
+*※ 법적 분쟁 발생시 본 의견은 법률적 해석이나 논리로 활용될 수 없습니다.*  
+
+자세한 사항은 각자의 입장이 담긴 공식 사이트를 확인하세요.  
+[네이버 고객센터 : 네이버 나눔스퀘어& 네이버 폰트 라이선스](https://help.naver.com/service/30016/contents/18088?osType=PC&lang=ko)  
+[구글 Fonts : NotoSansCJKKr](https://fonts.google.com/noto/specimen/Noto+Sans+KR/about)  
+[SIL Open Font License (OFL)](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)  
+[NerdFonts : 글리프](https://github.com/ryanoasis/nerd-fonts/blob/master/license-audit.md)  
+
+일반적인 경우, 다음의 표기가 권장됩니다.  
+
+> 이 페이지에는 네이버에서 제공한 NanumSquareNeo 폰트, 구글에서 제공한 NotoSansCJKKrMono 폰트, qwreey75@gmail.com 에서 제공한 Kawaii Mono 폰트, NerdFonts 에서 제공된 글리프가 포함되어 있습니다.
 
 ## Issue
 

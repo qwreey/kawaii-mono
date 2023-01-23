@@ -4,3 +4,4 @@ build:
 
 install: build
 	cp out/KawaiiMonoRegularPatched.ttf ~/.local/share/fonts/KawaiiMonoRegular.ttf
+	fc-cache -f -v
