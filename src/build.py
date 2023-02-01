@@ -4,6 +4,7 @@ import os
 from . import NanumSquareNeo as NanumSquareNeoLoader
 from . import NotoMono as NotoMonoLoader
 from . import KawaiiMono as KawaiiMonoLoader
+from . import utility as Utility
 
 def build(config=None):
     # 메인 폰트 불러오기
@@ -13,16 +14,21 @@ def build(config=None):
     # 모든 글리프를 붇여넣을 수 있도록 인코딩을 utf full 로 변경
     kawaii.encoding = 'UnicodeFull'
 
+    # 폰트 가로폭 설정
+    baseSize = config.get("FontBaseWidth")
+    if baseSize != 550:
+        Utility.setWidthWithSavingPosition(
+            font=kawaii,targetWidth=baseSize
+        )
+
     # 한글 글리프 붇여넣기
     if config.get("CopyKoreanGlyphs"):
         # 나눔 스퀘어 네오 다운로드/불러오기
-        nanumSquareNeo = fontforge.open(
-            NanumSquareNeoLoader.getFontPath())
+        nanumSquareNeo = NanumSquareNeoLoader.getFontPath()
         # 글리프 붇여넣기
         NanumSquareNeoLoader.pasteGlyphs(
-            target=kawaii,baseSize=550,
-            source=nanumSquareNeo)
-        nanumSquareNeo.close()
+            target=kawaii,baseSize=baseSize,weightStr="Regular",
+            sourcePath=nanumSquareNeo)
 
     if (config.get("CopyJapaneseGlyphs") or
         config.get("CopyCJKUnifiedIdeographs")):
