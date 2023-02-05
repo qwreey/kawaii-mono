@@ -21,7 +21,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1673013936
-ModificationTime: 1675170027
+ModificationTime: 1675593717
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -52,9 +52,9 @@ Encoding: Custom
 UnicodeInterp: none
 NameList: AGL For New Fonts
 DisplaySize: -48
-AntiAlias: 1
+AntiAlias: 0
 FitToEm: 0
-WinInfo: 532 38 14
+WinInfo: 646 38 14
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -610,9 +610,9 @@ LayerCount: 2
 Fore
 SplineSet
 468 0 m 25
- 227 361 l 25
- 127 361 l 29
- 369 0 l 29
+ 311 361 l 29
+ 211 361 l 29
+ 369 0 l 25
  468 0 l 25
 275 650 m 18
  335 650 387 602 387 546 c 2
@@ -7128,6 +7128,21 @@ Encoding: 814 8993 558
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+226 730 m 17
+ 226 162 l 1
+ 226 82 205.293945312 57 169 57 c 0
+ 145 57 130.265625 62.6533203125 123 79 c 0
+ 119 88 110 92 101 89 c 0
+ 91.095703125 85.6982421875 88 79 88 72 c 0
+ 88 57 92.2451171875 42.5185546875 106 28 c 0
+ 124 9 144.14453125 0 171 0 c 0
+ 215 0 251.126953125 19.607421875 267 35 c 0
+ 303.774414062 70.66015625 306 112 306 162 c 1
+ 306 730 l 9
+ 226 730 l 17
+EndSplineSet
 EndChar
 
 StartChar: dollar
@@ -7470,6 +7485,19 @@ Encoding: 849 8976 593
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+468 340 m 25
+ 82.0009765625 340 l 25
+ 82.0009765625 260 l 25
+ 468 260 l 25
+ 468 340 l 25
+162 0 m 25
+ 162 260 l 25
+ 82 260 l 25
+ 82 0 l 25
+ 162 0 l 25
+EndSplineSet
 EndChar
 
 StartChar: lighthorzbxd
@@ -7477,6 +7505,14 @@ Encoding: 850 9472 594
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+550 340 m 25
+ 0 340 l 25
+ 0 260 l 25
+ 550 260 l 25
+ 550 340 l 25
+EndSplineSet
 EndChar
 
 StartChar: heavyhorzbxd
@@ -7484,6 +7520,14 @@ Encoding: 851 9473 595
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+0 370 m 25
+ 0 230 l 25
+ 550 230 l 25
+ 550 370 l 25
+ 0 370 l 25
+EndSplineSet
 EndChar
 
 StartChar: lightvertbxd
@@ -7491,6 +7535,14 @@ Encoding: 852 9474 596
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+235 -200 m 25
+ 235 800 l 25
+ 315 800 l 25
+ 315 -200 l 25
+ 235 -200 l 25
+EndSplineSet
 EndChar
 
 StartChar: heavyvertbxd
@@ -7498,6 +7550,14 @@ Encoding: 853 9475 597
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 -200 m 25
+ 205 800 l 25
+ 345 800 l 25
+ 345 -200 l 25
+ 205 -200 l 25
+EndSplineSet
 EndChar
 
 StartChar: lighttrpldashhorzbxd
@@ -7519,6 +7579,24 @@ Encoding: 856 9478 600
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+235 170 m 29
+ 235 420 l 29
+ 315 420 l 29
+ 315 170 l 29
+ 235 170 l 29
+235 550 m 29
+ 235 800 l 29
+ 315 800 l 29
+ 315 550 l 29
+ 235 550 l 29
+235 -200 m 29
+ 235 50 l 29
+ 315 50 l 29
+ 315 -200 l 29
+ 235 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: heavytrpldashvertbxd
@@ -7526,6 +7604,24 @@ Encoding: 857 9479 601
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 170 m 29
+ 205 420 l 29
+ 345 420 l 29
+ 345 170 l 29
+ 205 170 l 29
+205 550 m 29
+ 205 800 l 29
+ 345 800 l 29
+ 345 550 l 29
+ 205 550 l 29
+205 -200 m 29
+ 205 50 l 29
+ 345 50 l 29
+ 345 -200 l 29
+ 205 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: lightquaddashhorzbxd
@@ -7561,6 +7657,19 @@ Encoding: 862 9484 606
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+550 340 m 29
+ 235.000976562 340 l 29
+ 235.000976562 260 l 29
+ 550 260 l 29
+ 550 340 l 29
+315 -200 m 29
+ 315 260 l 29
+ 235 260 l 29
+ 235 -200 l 29
+ 315 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: dnlightrightheavybxd
@@ -7568,6 +7677,19 @@ Encoding: 863 9485 607
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+235 370 m 25
+ 235 230 l 25
+ 550 230 l 25
+ 550 370 l 25
+ 235 370 l 25
+315 -200 m 25
+ 315 230 l 25
+ 235 230 l 25
+ 235 -200 l 25
+ 315 -200 l 25
+EndSplineSet
 EndChar
 
 StartChar: dnheavyrightlightbxd
@@ -7575,6 +7697,19 @@ Encoding: 864 9486 608
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 260 m 29
+ 550 260 l 29
+ 550 340 l 29
+ 345 340 l 29
+ 345 260 l 29
+205 340 m 29
+ 205 -200 l 29
+ 345 -200 l 29
+ 345 340 l 29
+ 205 340 l 29
+EndSplineSet
 EndChar
 
 StartChar: heavydnrightbxd
@@ -7582,6 +7717,19 @@ Encoding: 865 9487 609
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 370 m 25
+ 205 230 l 25
+ 550 230 l 25
+ 550 370 l 29
+ 205 370 l 25
+205 230 m 25
+ 345 230 l 25
+ 345 -200 l 25
+ 205 -200 l 25
+ 205 230 l 25
+EndSplineSet
 EndChar
 
 StartChar: lightdnleftbxd
@@ -7589,6 +7737,19 @@ Encoding: 866 9488 610
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+0 340 m 29
+ 314.999023438 340 l 29
+ 314.999023438 260 l 29
+ 0 260 l 29
+ 0 340 l 29
+235 -200 m 29
+ 235 260 l 29
+ 315 260 l 29
+ 315 -200 l 29
+ 235 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: dnlightleftheavybxd
@@ -7596,6 +7757,19 @@ Encoding: 867 9489 611
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+315 370 m 29
+ 315 230 l 29
+ 0 230 l 29
+ 0 370 l 29
+ 315 370 l 29
+235 -200 m 29
+ 235 230 l 29
+ 315 230 l 29
+ 315 -200 l 29
+ 235 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: dnheavyleftlightbxd
@@ -7603,6 +7777,19 @@ Encoding: 868 9490 612
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 260 m 29
+ 0 260 l 29
+ 0 340 l 29
+ 205 340 l 29
+ 205 260 l 29
+345 340 m 29
+ 345 -200 l 29
+ 205 -200 l 29
+ 205 340 l 29
+ 345 340 l 29
+EndSplineSet
 EndChar
 
 StartChar: heavydnleftbxd
@@ -7610,6 +7797,19 @@ Encoding: 869 9491 613
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 370 m 29
+ 345 230 l 29
+ 0 230 l 29
+ 0 370 l 29
+ 345 370 l 29
+345 230 m 29
+ 205 230 l 29
+ 205 -200 l 29
+ 345 -200 l 29
+ 345 230 l 29
+EndSplineSet
 EndChar
 
 StartChar: lightuprightbxd
@@ -7617,6 +7817,19 @@ Encoding: 870 9492 614
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+550 260 m 29
+ 235.000976562 260 l 29
+ 235.000976562 340 l 29
+ 550 340 l 29
+ 550 260 l 29
+315 800 m 29
+ 315 340 l 29
+ 235 340 l 29
+ 235 800 l 29
+ 315 800 l 29
+EndSplineSet
 EndChar
 
 StartChar: uplightrightheavybxd
@@ -7673,6 +7886,19 @@ Encoding: 878 9500 622
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+315 340 m 29
+ 550 340 l 29
+ 550 260 l 29
+ 315 260 l 29
+ 315 340 l 29
+235 -200 m 29
+ 235 800 l 29
+ 315 800 l 29
+ 315 -200 l 29
+ 235 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: vertlightrightheavybxd
@@ -7823,8 +8049,8 @@ LayerCount: 2
 Fore
 SplineSet
 345 370 m 29
- 550 370 l 25
- 550 230 l 25
+ 550 370 l 29
+ 550 230 l 29
  345 230 l 29
  345 370 l 29
 205 -200 m 25
@@ -7843,15 +8069,15 @@ LayerCount: 2
 Fore
 SplineSet
 235 340 m 29
- 0 340 l 25
- 0 260 l 25
+ 0 340 l 29
+ 0 260 l 29
  235 260 l 29
  235 340 l 29
-315 -200 m 25
- 315 800 l 25
- 235 800 l 25
- 235 -200 l 25
- 315 -200 l 25
+315 -200 m 29
+ 315 800 l 29
+ 235 800 l 29
+ 235 -200 l 29
+ 315 -200 l 29
 EndSplineSet
 EndChar
 
@@ -8020,6 +8246,19 @@ Encoding: 894 9516 638
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+550 340 m 29
+ 0 340 l 29
+ 0 260 l 29
+ 550 260 l 29
+ 550 340 l 29
+315 -200 m 25
+ 315 260 l 25
+ 235 260 l 25
+ 235 -200 l 25
+ 315 -200 l 25
+EndSplineSet
 EndChar
 
 StartChar: leftheavyrightdnlightbxd
@@ -8027,6 +8266,24 @@ Encoding: 895 9517 639
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+315 370 m 29
+ 315 230 l 29
+ 0 230 l 29
+ 0 370 l 29
+ 315 370 l 29
+315 340 m 29
+ 550 340 l 29
+ 550 260 l 29
+ 315 260 l 29
+ 315 340 l 29
+235 -200 m 25
+ 235 230 l 25
+ 315 230 l 25
+ 315 -200 l 25
+ 235 -200 l 25
+EndSplineSet
 EndChar
 
 StartChar: rightheavyleftdnlightbxd
@@ -8034,6 +8291,24 @@ Encoding: 896 9518 640
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+235 370 m 29
+ 235 230 l 29
+ 550 230 l 29
+ 550 370 l 29
+ 235 370 l 29
+235 340 m 29
+ 0 340 l 29
+ 0 260 l 29
+ 235 260 l 29
+ 235 340 l 29
+315 -200 m 29
+ 315 230 l 29
+ 235 230 l 29
+ 235 -200 l 29
+ 315 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: dnlighthorzheavybxd
@@ -8041,6 +8316,19 @@ Encoding: 897 9519 641
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+0 370 m 29
+ 0 230 l 29
+ 550 230 l 29
+ 550 370 l 29
+ 0 370 l 29
+315 -200 m 29
+ 315 230 l 29
+ 235 230 l 29
+ 235 -200 l 29
+ 315 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: dnheavyhorzlightbxd
@@ -8048,6 +8336,19 @@ Encoding: 898 9520 642
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+550 340 m 29
+ 0 340 l 29
+ 0 260 l 29
+ 550 260 l 29
+ 550 340 l 29
+345 260 m 29
+ 205 260 l 29
+ 205 -200 l 29
+ 345 -200 l 29
+ 345 260 l 29
+EndSplineSet
 EndChar
 
 StartChar: rightlightleftdnheavybxd
@@ -8055,6 +8356,24 @@ Encoding: 899 9521 643
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 370 m 29
+ 345 230 l 29
+ 0 230 l 29
+ 0 370 l 29
+ 345 370 l 29
+345 340 m 29
+ 550 340 l 29
+ 550 260 l 29
+ 345 260 l 29
+ 345 340 l 29
+345 230 m 29
+ 205 230 l 29
+ 205 -200 l 29
+ 345 -200 l 29
+ 345 230 l 29
+EndSplineSet
 EndChar
 
 StartChar: leftlightrightdnheavybxd
@@ -8062,6 +8381,24 @@ Encoding: 900 9522 644
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 370 m 29
+ 205 230 l 29
+ 550 230 l 29
+ 550 370 l 29
+ 205 370 l 29
+205 340 m 29
+ 0 340 l 29
+ 0 260 l 29
+ 205 260 l 29
+ 205 340 l 29
+205 230 m 29
+ 345 230 l 29
+ 345 -200 l 29
+ 205 -200 l 29
+ 205 230 l 29
+EndSplineSet
 EndChar
 
 StartChar: heavydnhorzbxd
@@ -8069,6 +8406,19 @@ Encoding: 901 9523 645
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 230 m 29
+ 205 230 l 29
+ 205 -200 l 29
+ 345 -200 l 29
+ 345 230 l 29
+0 370 m 25
+ 0 230 l 25
+ 550 230 l 25
+ 550 370 l 25
+ 0 370 l 25
+EndSplineSet
 EndChar
 
 StartChar: lightuphorzbxd
@@ -8076,6 +8426,19 @@ Encoding: 902 9524 646
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+550 260 m 29
+ 0 260 l 29
+ 0 340 l 29
+ 550 340 l 29
+ 550 260 l 29
+315 800 m 29
+ 315 340 l 29
+ 235 340 l 29
+ 235 800 l 29
+ 315 800 l 29
+EndSplineSet
 EndChar
 
 StartChar: leftheavyrightuplightbxd
@@ -8083,6 +8446,24 @@ Encoding: 903 9525 647
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+315 230 m 29
+ 315 370 l 29
+ 0 370 l 29
+ 0 230 l 29
+ 315 230 l 29
+315 260 m 29
+ 550 260 l 29
+ 550 340 l 29
+ 315 340 l 29
+ 315 260 l 29
+235 800 m 29
+ 235 370 l 29
+ 315 370 l 29
+ 315 800 l 29
+ 235 800 l 29
+EndSplineSet
 EndChar
 
 StartChar: rightheavyleftuplightbxd
@@ -8090,6 +8471,24 @@ Encoding: 904 9526 648
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+235 230 m 29
+ 235 370 l 29
+ 550 370 l 29
+ 550 230 l 29
+ 235 230 l 29
+235 260 m 29
+ 0 260 l 29
+ 0 340 l 29
+ 235 340 l 29
+ 235 260 l 29
+315 800 m 29
+ 315 370 l 29
+ 235 370 l 29
+ 235 800 l 29
+ 315 800 l 29
+EndSplineSet
 EndChar
 
 StartChar: uplighthorzheavybxd
@@ -8097,6 +8496,19 @@ Encoding: 905 9527 649
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+0 230 m 29
+ 0 370 l 29
+ 550 370 l 29
+ 550 230 l 29
+ 0 230 l 29
+315 800 m 29
+ 315 370 l 29
+ 235 370 l 29
+ 235 800 l 29
+ 315 800 l 29
+EndSplineSet
 EndChar
 
 StartChar: upheavyhorzlightbxd
@@ -8104,6 +8516,19 @@ Encoding: 906 9528 650
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+550 260 m 29
+ 0 260 l 29
+ 0 340 l 29
+ 550 340 l 29
+ 550 260 l 29
+345 340 m 29
+ 205 340 l 29
+ 205 800 l 29
+ 345 800 l 29
+ 345 340 l 29
+EndSplineSet
 EndChar
 
 StartChar: rightlightleftupheavybxd
@@ -8111,6 +8536,24 @@ Encoding: 907 9529 651
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 230 m 25
+ 345 370 l 25
+ 0 370 l 25
+ 0 230 l 25
+ 345 230 l 25
+345 260 m 25
+ 550 260 l 25
+ 550 340 l 25
+ 345 340 l 25
+ 345 260 l 25
+345 370 m 29
+ 345 800 l 29
+ 205 800 l 29
+ 205 370 l 29
+ 345 370 l 29
+EndSplineSet
 EndChar
 
 StartChar: leftlightrightupheavybxd
@@ -8118,6 +8561,24 @@ Encoding: 908 9530 652
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 230 m 29
+ 205 370 l 29
+ 550 370 l 29
+ 550 230 l 29
+ 205 230 l 29
+205 260 m 29
+ 0 260 l 29
+ 0 340 l 29
+ 205 340 l 29
+ 205 260 l 29
+205 370 m 29
+ 345 370 l 29
+ 345 800 l 29
+ 205 800 l 29
+ 205 370 l 29
+EndSplineSet
 EndChar
 
 StartChar: heavyuphorzbxd
@@ -8125,6 +8586,19 @@ Encoding: 909 9531 653
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 370 m 29
+ 205 370 l 29
+ 205 800 l 29
+ 345 800 l 29
+ 345 370 l 29
+0 230 m 29
+ 0 370 l 29
+ 550 370 l 29
+ 550 230 l 29
+ 0 230 l 29
+EndSplineSet
 EndChar
 
 StartChar: lightverthorzbxd
@@ -8524,6 +8998,14 @@ Encoding: 966 9588 710
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 340 m 25
+ 0 340 l 25
+ 0 260 l 25
+ 205 260 l 25
+ 205 340 l 25
+EndSplineSet
 EndChar
 
 StartChar: lightupbxd
@@ -8531,6 +9013,14 @@ Encoding: 967 9589 711
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+315 800 m 25
+ 315 340 l 25
+ 235 340 l 25
+ 235 800 l 25
+ 315 800 l 25
+EndSplineSet
 EndChar
 
 StartChar: lightrightbxd
@@ -8538,6 +9028,14 @@ Encoding: 968 9590 712
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 340 m 25
+ 550 340 l 25
+ 550 260 l 25
+ 345 260 l 25
+ 345 340 l 25
+EndSplineSet
 EndChar
 
 StartChar: lightdnbxd
@@ -8545,6 +9043,14 @@ Encoding: 969 9591 713
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+315 -200 m 25
+ 315 260 l 25
+ 235 260 l 25
+ 235 -200 l 25
+ 315 -200 l 25
+EndSplineSet
 EndChar
 
 StartChar: heavyleftbxd
@@ -8552,6 +9058,14 @@ Encoding: 970 9592 714
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 370 m 25
+ 345 230 l 25
+ 0 230 l 25
+ 0 370 l 25
+ 345 370 l 25
+EndSplineSet
 EndChar
 
 StartChar: heavyupbxd
@@ -8559,6 +9073,14 @@ Encoding: 971 9593 715
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 260 m 25
+ 345 800 l 25
+ 205 800 l 25
+ 205 260 l 25
+ 345 260 l 25
+EndSplineSet
 EndChar
 
 StartChar: heavyrightbxd
@@ -8566,6 +9088,14 @@ Encoding: 972 9594 716
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 370 m 25
+ 205 230 l 25
+ 550 230 l 25
+ 550 370 l 25
+ 205 370 l 25
+EndSplineSet
 EndChar
 
 StartChar: heavydnbxd
@@ -8573,6 +9103,14 @@ Encoding: 973 9595 717
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 340 m 25
+ 345 -200 l 25
+ 205 -200 l 25
+ 205 340 l 25
+ 345 340 l 25
+EndSplineSet
 EndChar
 
 StartChar: lightleftheavyrightbxd
@@ -8580,6 +9118,19 @@ Encoding: 974 9596 718
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+205 370 m 25
+ 205 230 l 25
+ 550 230 l 25
+ 550 370 l 25
+ 205 370 l 25
+205 340 m 29
+ 0 340 l 29
+ 0 260 l 29
+ 205 260 l 29
+ 205 340 l 29
+EndSplineSet
 EndChar
 
 StartChar: lightupheavydnbxd
@@ -8587,6 +9138,19 @@ Encoding: 975 9597 719
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 340 m 25
+ 345 -200 l 25
+ 205 -200 l 25
+ 205 340 l 25
+ 345 340 l 25
+315 800 m 25
+ 315 340 l 25
+ 235 340 l 25
+ 235 800 l 25
+ 315 800 l 25
+EndSplineSet
 EndChar
 
 StartChar: heavyleftlightrightbxd
@@ -8594,6 +9158,19 @@ Encoding: 976 9598 720
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 370 m 29
+ 345 230 l 29
+ 0 230 l 29
+ 0 370 l 29
+ 345 370 l 29
+345 340 m 29
+ 550 340 l 29
+ 550 260 l 29
+ 345 260 l 29
+ 345 340 l 29
+EndSplineSet
 EndChar
 
 StartChar: heavyuplightdnbxd
@@ -8601,6 +9178,19 @@ Encoding: 977 9599 721
 Width: 550
 Flags: HW
 LayerCount: 2
+Fore
+SplineSet
+345 260 m 29
+ 345 800 l 29
+ 205 800 l 29
+ 205 260 l 29
+ 345 260 l 29
+315 -200 m 29
+ 315 260 l 29
+ 235 260 l 29
+ 235 -200 l 29
+ 315 -200 l 29
+EndSplineSet
 EndChar
 
 StartChar: uphalfblock

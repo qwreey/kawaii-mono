@@ -1,10 +1,20 @@
-if __name__ == "__main__":
-    import os
-    import sys
-    sys.path.append(os.path.realpath(os.path.dirname(os.path.realpath(__file__))+"/../"))
 import os
 import zipfile
-import wgetHandler
+# from .. import wgetHandler
+
+import os
+import importlib
+basePath = os.path.realpath(os.path.dirname(__file__)+"/../")
+wgetHandler = importlib.util.module_from_spec(importlib.util.spec_from_file_location("wgetHandler",basePath+"/wgetHandler.py"))
+# import wgetHandler
+
+print("__file__ : {__file__}".format(__file__=__file__))
+print("wgetHandler (spec)")
+print(importlib.util.spec_from_file_location("wgetHandler",basePath))
+print("wgetHandler [object]")
+print(wgetHandler)
+print(help(wgetHandler))
+# import wgetHandler
 
 link_FontPatcher = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip"
 
