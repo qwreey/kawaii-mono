@@ -5,7 +5,11 @@ import zipfile
 import os
 import importlib
 basePath = os.path.realpath(os.path.dirname(__file__)+"/../")
-wgetHandler = importlib.util.module_from_spec(importlib.util.spec_from_file_location("wgetHandler",basePath+"/wgetHandler.py"))
+wgetHandlerSpec = importlib.util.spec_from_file_location("wgetHandler",basePath+"/wgetHandler.py")
+wgetHandler = importlib.util.module_from_spec(wgetHandlerSpec)
+wgetHandlerSpec.loader.exec_module(wgetHandler)
+
+
 # import wgetHandler
 
 print("__file__ : {__file__}".format(__file__=__file__))
