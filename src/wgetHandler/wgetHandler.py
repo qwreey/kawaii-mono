@@ -1,5 +1,6 @@
-from .wget import wget
 import math
+
+from .wget import wget
 
 # bar 를 커스텀.... 하는 어떤 글에서 가져온거
 def bar_custom(current, total, width=80):

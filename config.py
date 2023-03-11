@@ -41,25 +41,31 @@ config = {
     # 폰트 용량이 매우 커집니다!!
     "CopyKoreanGlyphs": True,
 
-    # TODO: 이 설정은 아직 동작하지 않습니다
     # 노토 산스 모노에서 가타카나/히라가나
     # 글리프를 복사할 지에 대한 여부입니다
     # 한자는 포함하지 않습니다
-    "CopyJapaneseGlyphs": False,
+    "CopyJapaneseGlyphs": True,
 
-    # TODO: 이 설정은 아직 동작하지 않습니다
+    # 노토 산스에서 단위관련 기호, 원형 기호
+    # 글리프를 복사할 지에 대한 여부입니다
+    # 폰트위 용량이 매우 커집니다!!
+    "CopySymbols": True,
+
     # 노토 산스 모노에서 CJK 공용 한자 글리프를
     # 복사할 지에 대한 여부입니다.
     # 폰트 용량이 매우 커집니다!!
     # 웹용 폰트의 경우 끄는것을 추천합니다
-    "CopyCJKUnifiedIdeographs": False,
+    #! 최소 2분 이상 걸립니다!!
+    "CopyCJKUnifiedIdeographs": True, # 일반적인 CJK Unified
+    "CopyCJKUnifiedIdeographsExtension": False, # Extension A~F
+    "CopyCJKCompatibilityIdeographs": False, # Compatibility Ideograph, Supplement
+    #! 이 옵션들을 활성화시 ttf 포멧으로 저장에 실패할 수 있습니다
+    #? ttf 의 글자수 제한 때문에 그런것이므로, 다른 포멧으로 저장해야합니다.
 
-    # TODO: 이 설정은 아직 동작하지 않습니다
     # 라틴 글리프를 Hack 폰트에서 더 가져옵니다
     # (성조 표시된 라틴, ...)
     "CopyLatinExtra": True,
 
-    # TODO: 이 설정은 아직 동작하지 않습니다
     # Nerd Fonts 패치를 적용할지에 대한
     # 여부입니다. 폰트 용량이 매우 커집니다!!
     # 웹용 폰트의 경우 끄는것을 추천합니다
