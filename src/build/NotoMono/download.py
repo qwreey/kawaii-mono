@@ -9,3 +9,5 @@ def download():
     if not os.path.exists("assets/NotoMonoCJKkr.otf"):
         wgetHandler.download(github_NotoSansMonoCJKkr,"assets/NotoMonoCJKkr.otf")
     return "assets/NotoMonoCJKkr.otf"
+
+def isCached(): return os.path.exists("assets/NotoMonoCJKkr.otf")

@@ -27,7 +27,6 @@ def CJKUnifiedIdeographs(font):
     # CJK Unified Ideograph
     font.selection.select(selFlag,0x4E00,0x9FFF)
 
-
 def CJKUnifiedIdeographsExtension(font):
     font.selection.select(selFlag,0x3400,0x4DBF) # Extension A
     font.selection.select(selFlag,0x20000,0x2A6DF) # Extension B

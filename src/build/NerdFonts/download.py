@@ -18,4 +18,6 @@ def downloadPatcher():
         print(" [OK]")
     return "assets/NerdFontPatcher_extract"
 
+def isCached(): return os.path.exists("assets/NerdFontPatcher_extract")
+
 def nerdFonts_Download_Test(): downloadPatcher()

@@ -13,10 +13,16 @@ def build(config=None):
     # 메인 폰트 불러오기 / 에셋 다운로드
     kawaii = fontforge.open(
         KawaiiMonoLoader.getFontPath())
-    print("-------------- DOWNLOAD PATCH CONTENTS --------------")
+    downloadContentHeader = False
+    def printDownloadContentHeader():
+        nonlocal downloadContentHeader
+        if downloadContentHeader == False:
+            downloadContentHeader = True
+            print("-------------- DOWNLOAD PATCH CONTENTS --------------")
     # 나눔 스퀘어 네오 다운로드
     nanumSquareNeo = None
     if config.get("CopyKoreanGlyphs"):
+        if not NanumSquareNeoLoader.isCached(): printDownloadContentHeader()
         nanumSquareNeo = NanumSquareNeoLoader.download()
     # 노토 모노 다운로드/불러오기
     notoMono = None
@@ -24,12 +30,14 @@ def build(config=None):
         config.get("CopyCJKUnifiedIdeographs") or
         config.get("CopyCJKUnifiedIdeographsExtension") or
         config.get("CopyCJKCompatibilityIdeographs")):
+        if not NotoMonoLoader.isCached(): printDownloadContentHeader()
         notoMono = NotoMonoLoader.download()
     # Nerd fonts 패치기 다운로드
     nerdFontsPatcherPath = None
     if config.get("NerdFonts"):
+        if not NerdFontsLoader.isCached(): printDownloadContentHeader()
         nerdFontsPatcherPath = NerdFontsLoader.downloadPatcher()
-    print("--------------------- Patching ---------------------")
+    print("--------------------- Patching ----------------------")
 
     # 유지 목록 (덮어쓰기 금지) 만들기
     kawaii.selection.all()
@@ -64,10 +72,10 @@ def build(config=None):
             EnabledItems = {
                 "JapaneseGlyphs": config.get("CopyJapaneseGlyphs") or False,
                 "CJKUnifiedIdeographs": config.get("CopyCJKUnifiedIdeographs") or False,
-                "CJKUnifiedIdeographsExtension": config.get("CopyCJKUnifiedIdeographsExtension"),
-                "CJKCompatibilityIdeographs": config.get("CopyCJKCompatibilityIdeographs"),
+                "CJKUnifiedIdeographsExtension": config.get("CopyCJKUnifiedIdeographsExtension") or False,
+                "CJKCompatibilityIdeographs": config.get("CopyCJKCompatibilityIdeographs") or False,
+                "Symbols": config.get("CopySymbols") or False,
             },
-            Symbols=config.get("CopySymbols") or False,
             target=kawaii,baseSize=550,
             sourcePath=notoMono,
             deselectOriginalGlyphs = deselectOriginalGlyphs)

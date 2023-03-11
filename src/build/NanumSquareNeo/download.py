@@ -20,3 +20,5 @@ def download():
             shutil.rmtree('assets/NanumSquareNeoKr.extract')
         print(" [OK]")
     return "assets/NanumSquareNeoKr.ttf"
+
+def isCached(): return os.path.exists("assets/NanumSquareNeoKr.ttf")

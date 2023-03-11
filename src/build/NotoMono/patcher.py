@@ -22,7 +22,7 @@ def pasteGlyphs(target,sourcePath,deselectOriginalGlyphs,EnabledItems,baseSize=5
     selectGlyphs.SelectByEnabledList(source,EnabledItems)
     deselectOriginalGlyphs(source)
     source.copy()
-    selectGlyphs.SelectByEnabledList(source,target)
+    selectGlyphs.SelectByEnabledList(target,EnabledItems)
     deselectOriginalGlyphs(target)
     target.paste()
 
