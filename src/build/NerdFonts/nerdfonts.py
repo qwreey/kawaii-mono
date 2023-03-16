@@ -90,8 +90,12 @@ def build(target,deselectOriginalGlyphs,NerdFontsAdjust=True,baseSize=550,weight
     print("Patching: NerdFonts")
 
     # NerdFonts 공식 패처를 수행함
+    print("    Calling NerdFonts Patcher . . .",flush=True)
     callPatcher(target)
+    print("\x1b[2K\r    [OK]")
 
     # 적절한 크기를 위해서 크기조절을 수행함
     if NerdFontsAdjust:
+        print("    Adjusting size . . .",end=False,flush=True)
         postScript(target,deselectOriginalGlyphs,baseSize)
+        print("    [OK]")
