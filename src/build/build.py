@@ -98,8 +98,15 @@ def build(weightStr="Regular",config=None):
             deselectOriginalGlyphs = deselectOriginalGlyphs)
         updateOriginalGlyphs()
 
+    # 반올림
+    print("Position Rounding . . .",end="",flush=True)
+    kawaii.selection.all()
+    kawaii.round()
+    kawaii.selection.none()
+    print(" [OK]")
+
     # 생성
-    print("Saving",end="",flush=True)
+    print("Saving . . .",end="",flush=True)
     if not os.path.exists("out"): os.mkdir("out")
     kawaii.generate("out/"+"KawaiiMonoRegularPatched.ttf")
     print(" [OK]")
