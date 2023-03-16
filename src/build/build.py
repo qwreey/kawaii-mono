@@ -63,6 +63,30 @@ def build(config=None,weightStr="Regular"):
             font=kawaii,targetWidth=baseSize
         )
 
+    # os2 설정 저장
+    os2 = {
+        "os2_subxsize": kawaii.os2_subxsize,
+        "os2_subysize": kawaii.os2_subysize,
+        "os2_supxsize": kawaii.os2_supxsize,
+        "os2_supysize": kawaii.os2_supysize,
+        "os2_typoascent": kawaii.os2_typoascent,
+        "os2_typodescent": kawaii.os2_typodescent,
+        "os2_typolinegap": kawaii.os2_typolinegap,
+        "os2_width": kawaii.os2_width,
+        "os2_winascent": kawaii.os2_winascent,
+        "os2_windescent": kawaii.os2_windescent,
+    }
+
+    # NerdFonts 패치 적용
+    if config.get("NerdFonts"):
+        NerdFontsLoader.build(
+            target=kawaii,
+            NerdFontsAdjust=config.get("NerdFontsAdjust") or False,
+            baseSize=baseSize,
+            weightStr=weightStr,
+            deselectOriginalGlyphs = deselectOriginalGlyphs)
+        updateOriginalGlyphs()
+
     # 한글 글리프 붇여넣기
     if nanumSquareNeo:
         # 글리프 붇여넣기
@@ -88,18 +112,18 @@ def build(config=None,weightStr="Regular"):
             deselectOriginalGlyphs = deselectOriginalGlyphs)
         updateOriginalGlyphs()
 
-    # NerdFonts 패치 적용
-    if config.get("NerdFonts"):
-        NerdFontsLoader.build(
-            target=kawaii,
-            NerdFontsAdjust=config.get("NerdFontsAdjust") or False,
-            baseSize=baseSize,
-            weightStr=weightStr,
-            deselectOriginalGlyphs = deselectOriginalGlyphs)
-        updateOriginalGlyphs()
-
     # 반올림
     print("Position Rounding . . .",end="",flush=True)
+    kawaii.os2_subxsize = os2.get("os2_subxsize")
+    kawaii.os2_subysize = os2.get("os2_subysize")
+    kawaii.os2_supxsize = os2.get("os2_supxsize")
+    kawaii.os2_supysize = os2.get("os2_supysize")
+    kawaii.os2_typoascent = os2.get("os2_typoascent")
+    kawaii.os2_typodescent = os2.get("os2_typodescent")
+    kawaii.os2_typolinegap = os2.get("os2_typolinegap")
+    kawaii.os2_width = os2.get("os2_width")
+    kawaii.os2_winascent = os2.get("os2_winascent")
+    kawaii.os2_windescent = os2.get("os2_windescent")
     kawaii.selection.all()
     kawaii.round()
     kawaii.selection.none()

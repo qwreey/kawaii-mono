@@ -36,7 +36,7 @@ def callPatcher(font):
     args.progressbars = True
     # args.quiet = True
     args.quiet = False
-    args.adjustLineHeight = True
+    args.adjustLineHeight = False
     # args.careful = True
     args.careful = False
     args.single = False
