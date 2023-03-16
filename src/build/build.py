@@ -9,10 +9,10 @@ from . import KawaiiMono as KawaiiMonoLoader
 
 deselectFlags = ("less","unicode")
 
-def build(config=None):
+def build(weightStr="Regular",config=None):
     # 메인 폰트 불러오기 / 에셋 다운로드
     kawaii = fontforge.open(
-        KawaiiMonoLoader.getFontPath())
+        KawaiiMonoLoader.getFontPath(weightStr=weightStr))
     downloadContentHeader = False
     def printDownloadContentHeader():
         nonlocal downloadContentHeader
@@ -67,7 +67,7 @@ def build(config=None):
     if nanumSquareNeo:
         # 글리프 붇여넣기
         NanumSquareNeoLoader.pasteGlyphs(
-            target=kawaii,baseSize=baseSize,weightStr="Regular",
+            target=kawaii,baseSize=baseSize,weightStr=weightStr,
             sourcePath=nanumSquareNeo,
             deselectOriginalGlyphs = deselectOriginalGlyphs)
         updateOriginalGlyphs()
@@ -94,13 +94,15 @@ def build(config=None):
             target=kawaii,
             NerdFontsAdjust=config.get("NerdFontsAdjust") or False,
             baseSize=baseSize,
-            weightStr="Regular",
+            weightStr=weightStr,
             deselectOriginalGlyphs = deselectOriginalGlyphs)
         updateOriginalGlyphs()
 
     # 생성
+    print("Saving",end="",flush=True)
     if not os.path.exists("out"): os.mkdir("out")
     kawaii.generate("out/"+"KawaiiMonoRegularPatched.ttf")
+    print(" [OK]")
 
     # KawaiiMonoRegularPatched.ttf
     # KawaiiMonoRegularPatched.otf
@@ -109,5 +111,9 @@ def build(config=None):
 
     # 파일 닫기
     kawaii.close()
+
+def buildAll(config):
+    build(weightStr="Regular",config=config)
+    build(weightStr="Bold",config=config)
 
 if __name__ == "__main__": build()
