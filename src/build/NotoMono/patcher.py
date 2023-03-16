@@ -8,6 +8,7 @@ weightStrToNum = {
 
 def pasteGlyphs(target,sourcePath,deselectOriginalGlyphs,EnabledItems,baseSize=550,weightStr="Regular"):
     # 캐시된 소스를 읽어드림
+    print("Patching: NotoMono")
     source = getCachedFont(
         sourcePath = sourcePath,
         baseSize = baseSize,
@@ -15,6 +16,7 @@ def pasteGlyphs(target,sourcePath,deselectOriginalGlyphs,EnabledItems,baseSize=5
         EnabledItems = EnabledItems
     )
 
+    print("    Copying . . .",end="",flush=True)
     selectGlyphs.Clear(source)
     selectGlyphs.Clear(target)
 
@@ -25,6 +27,7 @@ def pasteGlyphs(target,sourcePath,deselectOriginalGlyphs,EnabledItems,baseSize=5
     selectGlyphs.SelectByEnabledList(target,EnabledItems)
     deselectOriginalGlyphs(target)
     target.paste()
+    print(" [OK]")
 
     # 캐시 닫기
     source.close()

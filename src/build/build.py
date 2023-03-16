@@ -46,6 +46,9 @@ def build(config=None):
         for unicode in keepList:
             if unicode == -1: continue
             target.selection.select(deselectFlags,unicode)
+    def updateOriginalGlyphs():
+        nonlocal keepList
+        keepList = [i.unicode for i in kawaii.selection.byGlyphs]
 
     # 모든 글리프를 붇여넣을 수 있도록 인코딩을 utf full 로 변경
     kawaii.encoding = 'UnicodeFull'
@@ -64,6 +67,7 @@ def build(config=None):
             target=kawaii,baseSize=baseSize,weightStr="Regular",
             sourcePath=nanumSquareNeo,
             deselectOriginalGlyphs = deselectOriginalGlyphs)
+        updateOriginalGlyphs()
 
     # 일어 글리프 혹은 한자 글리프 추가
     if notoMono:
@@ -76,13 +80,19 @@ def build(config=None):
                 "CJKCompatibilityIdeographs": config.get("CopyCJKCompatibilityIdeographs") or False,
                 "Symbols": config.get("CopySymbols") or False,
             },
-            target=kawaii,baseSize=550,
+            target=kawaii,baseSize=baseSize,
             sourcePath=notoMono,
             deselectOriginalGlyphs = deselectOriginalGlyphs)
+        updateOriginalGlyphs()
 
     # NerdFonts 패치 적용
-    # if config.get("NerdFonts"):
-    #     nerdFontsPatcherPath = NerdFontsLoader.downloadPatcher()
+    if config.get("NerdFonts"):
+        NerdFontsLoader.build(
+            target=kawaii,
+            NerdFontsAdjust=config.get("NerdFontsAdjust") or False,
+            baseSize=baseSize,
+            weightStr="Regular",
+            deselectOriginalGlyphs = deselectOriginalGlyphs)
 
     # 생성
     if not os.path.exists("out"): os.mkdir("out")

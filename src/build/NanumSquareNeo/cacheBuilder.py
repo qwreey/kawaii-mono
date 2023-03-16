@@ -10,9 +10,9 @@ def getCachedFont(sourcePath,baseSize=550,weight=16):
     # 캐시된 파일을 확인하고 있으면 반환
     filename = "assets/cache/NanumSquareNeoKr.cache_{}.base_{}.weight_{}.sfd".format(patchVersion,baseSize,weight)
     if os.path.exists(filename):
-        print("Found build cache [OK]")
+        print("    Found build cache [CACHE HIT]")
         return fontforge.open(filename)
-    print("Creating new build cache",end="")
+    print("    Creating new build cache",end="",flush=True)
 
     # 새로운 캐시용 폰트 생성
     cache=fontforge.font()

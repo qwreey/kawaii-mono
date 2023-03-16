@@ -16,9 +16,9 @@ def getCachedFont(sourcePath,EnabledItems,baseSize=550,weight=16):
         EnabledItems.get("CopyCJKCompatibilityIdeographs") and ".cid" or "",
         EnabledItems.get("Symbols") and ".sym" or "")
     if os.path.exists(filename):
-        print("Found build cache [OK]")
+        print("    Found build cache [CACHE HIT]")
         return fontforge.open(filename)
-    print("Creating new build cache",end="")
+    print("    Creating new build cache",end="",flush=True)
 
     # 새로운 캐시용 폰트 생성
     cache=fontforge.font()
@@ -29,17 +29,15 @@ def getCachedFont(sourcePath,EnabledItems,baseSize=550,weight=16):
     source.cidFlatten()
     source.encoding = 'UnicodeFull'
     if EnabledItems.get("JapaneseGlyphs"): selectGlyphs.JapaneseGlyphs(source)
-    if EnabledItems.get("Symbols"): selectGlyphs.Symbols(source)
     source.changeWeight(weight) # 굵기 변경
     selectGlyphs.SelectByEnabledList(source,EnabledItems)
     # 한자 글립은 냥많아서 크기조절하면 끝이 안난다냥
 
     # 너비 지정
+    Utility.scale(font=source,targetScale=0.85)
     Utility.setWidthWithSavingPosition(
         font=source,targetWidth=baseSize*2
     )
-
-    Utility.scale(font=source,targetScale=0.85)
 
     # 캐시에 붇여넣기
     source.copy()

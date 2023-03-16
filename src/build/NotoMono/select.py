@@ -52,14 +52,21 @@ def Symbols(font):
     font.selection.select(selFlag,0x3358,0x337A)
     font.selection.select(selFlag,0x3380,0x33FF)
 
+    # 로마 숫자
+    # font.selection.select(selFlag,0x2160,0x217B)
+    font.selection.select(selFlag,0x2150,0x218F) # Number Forms
+
     # Latin Ligature
-    font.selection.select(selFlag,0xFB00,0xFB04)
+    font.selection.select(selFlag,0xFB00,0xFB4F) # 	Alphabetic Presentation Forms
 
     # 특수기호/FULLWIDTH Latin
-    font.selection.select(selFlag,0xFE10,0xFF5A)
-    font.selection.select(selFlag,0xFFE0,0xFFEE)
-    font.selection.select(selFlag,0x1F100,0x1F1AC)
-    font.selection.select(selFlag,0x1F201,0x1F251)
+    font.selection.select(selFlag,0x2600,0x26FF) # Miscellaneous Symbols
+    font.selection.select(selFlag,0x2700,0x27BF) # Dingbats
+    font.selection.select(selFlag,0xFE10,0xFE1F) # Vertical Forms
+    # font.selection.select(selFlag,0xFFE0,0xFFEE) # (Without kr) Halfwidth and Fullwidth Forms
+    font.selection.select(selFlag,0xFF00,0xFFEF) # Halfwidth and Fullwidth Forms
+    font.selection.select(selFlag,0x1F100,0x1F1FF) # Enclosed Alphanumeric Supplement
+    font.selection.select(selFlag,0x1F200,0x1F2FF) # Enclosed Ideographic Supplement
 
 def SelectByEnabledList(target,EnabledItems):
     if EnabledItems.get("JapaneseGlyphs"): JapaneseGlyphs(target)

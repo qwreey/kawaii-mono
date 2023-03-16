@@ -17,6 +17,7 @@ def pasteGlyphs(target,sourcePath,deselectOriginalGlyphs,baseSize=550,weightStr=
         weight = weightStrToNum.get(weightStr)
     )
 
+    print("    Copying . . .",end="",flush=True)
     selectGlyphs.Clear(source)
     selectGlyphs.Clear(target)
 
@@ -27,6 +28,7 @@ def pasteGlyphs(target,sourcePath,deselectOriginalGlyphs,baseSize=550,weightStr=
     selectGlyphs.Korean(target)
     deselectOriginalGlyphs(target)
     target.paste()
+    print(" [OK]")
 
     # 캐시 닫기
     source.close()
