@@ -9,6 +9,9 @@ def setWidthWithSavingPosition(font,targetWidth):
         glyph.right_side_bearing = int(glyph.right_side_bearing + math.ceil(sideAdjust))
         glyph.width = targetWidth # 타겟 너비로 정확하게 설정
 
+def width(font,targetWidth):
+    for glyph in font.selection.byGlyphs: glyph.width = targetWidth
+
 def scale(font,targetScale):
     font.transform(psMat.scale(targetScale))
     font.round()

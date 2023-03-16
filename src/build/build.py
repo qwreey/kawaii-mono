@@ -40,15 +40,18 @@ def build(config=None):
     print("--------------------- Patching ----------------------")
 
     # 유지 목록 (덮어쓰기 금지) 만들기
-    kawaii.selection.all()
-    keepList = [i.unicode for i in kawaii.selection.byGlyphs]
+    keepList = None
     def deselectOriginalGlyphs(target):
+        nonlocal keepList
         for unicode in keepList:
             if unicode == -1: continue
             target.selection.select(deselectFlags,unicode)
     def updateOriginalGlyphs():
         nonlocal keepList
+        kawaii.selection.all()
         keepList = [i.unicode for i in kawaii.selection.byGlyphs]
+        kawaii.selection.none()
+    updateOriginalGlyphs()
 
     # 모든 글리프를 붇여넣을 수 있도록 인코딩을 utf full 로 변경
     kawaii.encoding = 'UnicodeFull'
@@ -93,6 +96,7 @@ def build(config=None):
             baseSize=baseSize,
             weightStr="Regular",
             deselectOriginalGlyphs = deselectOriginalGlyphs)
+        updateOriginalGlyphs()
 
     # 생성
     if not os.path.exists("out"): os.mkdir("out")

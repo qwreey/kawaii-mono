@@ -1,10 +1,10 @@
 import argparse
+import utility as Utility
 
 def callPatcher(font):
 
-
     import sys
-    NerdFontPatcher = sys.modules["NerdFontPatcher"]
+    NerdFontPatcher = sys.modules.get("NerdFontPatcher",None)
     if not NerdFontPatcher:
         import importlib.util
         spec = importlib.util.spec_from_file_location("NerdFontPatcher", "assets/NerdFontPatcher_extract/fontPatcher.py")
@@ -32,7 +32,9 @@ def callPatcher(font):
     args.windows = True
     args.alsowindows = False
     args.nonmono = False
+    # args.progressbars = False
     args.progressbars = True
+    # args.quiet = True
     args.quiet = False
     args.adjustLineHeight = True
     # args.careful = True
@@ -50,9 +52,36 @@ def callPatcher(font):
 selFlag = ("more","ranges","unicode")
 
 def postScript(font,deselectOriginalGlyphs,baseSize):
+    # Termux, Vscode 등에서 정의된 크기에 따라
+    # 폰트 크기를 맞춥니다
+
+    # 일반 크기
     font.selection.none()
-    font.selection.select()
-    deselectOriginalGlyphs()
+    font.selection.select(selFlag,0xE200,0xF8FE)
+    font.selection.select(selFlag,0xFADA,0xFD46)
+    font.selection.select(selFlag,0xF8FF,0xF8FF)
+    font.selection.select(selFlag,0xF0001,0xF1AF0)
+    deselectOriginalGlyphs(font)
+    Utility.setWidthWithSavingPosition(
+        font=font,targetWidth=baseSize*2
+    )
+    Utility.width(font=font,targetWidth=baseSize)
+
+    # 2배 크기
+    font.selection.none()
+    font.selection.select(selFlag,0xF8FF,0xFAD9)
+    deselectOriginalGlyphs(font)
+    Utility.setWidthWithSavingPosition(
+        font=font,targetWidth=baseSize*2
+    )
+
+    # 몰라 그냥 다 2배로
+    # font.selection.none()
+    # font.selection.select(selFlag,0xF8FF,0xFAD9)
+    # deselectOriginalGlyphs(font)
+    # Utility.setWidthWithSavingPosition(
+    #     font=font,targetWidth=baseSize*2
+    # )
 
 def build(target,deselectOriginalGlyphs,NerdFontsAdjust=True,baseSize=550,weightStr="Regular"):
     # 용량적 이유로 Regular 폰트에만 패치를 적용함
@@ -64,5 +93,5 @@ def build(target,deselectOriginalGlyphs,NerdFontsAdjust=True,baseSize=550,weight
     callPatcher(target)
 
     # 적절한 크기를 위해서 크기조절을 수행함
-    # if NerdFontsAdjust:
-        # postScript(target,deselectOriginalGlyphs,baseSize)
+    if NerdFontsAdjust:
+        postScript(target,deselectOriginalGlyphs,baseSize)
