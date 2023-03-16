@@ -9,7 +9,7 @@ from . import KawaiiMono as KawaiiMonoLoader
 
 deselectFlags = ("less","unicode")
 
-def build(weightStr="Regular",config=None):
+def build(config=None,weightStr="Regular"):
     # 메인 폰트 불러오기 / 에셋 다운로드
     kawaii = fontforge.open(
         KawaiiMonoLoader.getFontPath(weightStr=weightStr))

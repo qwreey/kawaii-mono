@@ -98,4 +98,4 @@ def build(target,deselectOriginalGlyphs,NerdFontsAdjust=True,baseSize=550,weight
     if NerdFontsAdjust:
         print("    Adjusting size . . .",end="",flush=True)
         postScript(target,deselectOriginalGlyphs,baseSize)
-        print("    [OK]")
+        print(" [OK]")
