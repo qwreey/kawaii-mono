@@ -96,6 +96,6 @@ def build(target,deselectOriginalGlyphs,NerdFontsAdjust=True,baseSize=550,weight
 
     # 적절한 크기를 위해서 크기조절을 수행함
     if NerdFontsAdjust:
-        print("    Adjusting size . . .",end=False,flush=True)
+        print("    Adjusting size . . .",end="",flush=True)
         postScript(target,deselectOriginalGlyphs,baseSize)
         print("    [OK]")
