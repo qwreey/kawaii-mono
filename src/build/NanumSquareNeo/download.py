@@ -15,7 +15,7 @@ def download():
             wgetHandler.download(link_NanumSquareNeo,"assets/NanumSquareNeoKr.zip")
         print("Unzipping NanumSquareNeoKr.zip",end="")
         with zipfile.ZipFile("assets/NanumSquareNeoKr.zip", 'r') as zip_ref:
-            extractName = zip_ref.extract("NaverNanumSquareNeo/TTF/NanumSquareNeo-bRg.ttf","assets/NanumSquareNeoKr.extract")
+            extractName = zip_ref.extract("NanumSquareNeo/TTF/NanumSquareNeo-bRg.ttf","assets/NanumSquareNeoKr.extract")
             os.rename(extractName,"assets/NanumSquareNeoKr.ttf")
             shutil.rmtree('assets/NanumSquareNeoKr.extract')
         print(" [OK]")
