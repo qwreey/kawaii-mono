@@ -3,7 +3,7 @@ import utility as Utility
 import logging
 import sys
 
-def callPatcher(font):
+def callPatcher(font, baseSize):
     NerdFontPatcher = sys.modules.get("NerdFontPatcher",None)
     if not NerdFontPatcher:
         import importlib.util
@@ -11,18 +11,20 @@ def callPatcher(font):
         NerdFontPatcher = importlib.util.module_from_spec(spec)
         sys.modules["NerdFontPatcher"] = NerdFontPatcher
         spec.loader.exec_module(NerdFontPatcher)
-        logger = logging.getLogger("start") # Use start logger until we can set up something sane
-        s_handler = logging.StreamHandler(stream=sys.stdout)
-        s_handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
-        logger.addHandler(s_handler)
-        NerdFontPatcher.logger = logger
+
+    logger = logging.getLogger("start") # Use start logger until we can set up something sane
+    s_handler = logging.StreamHandler(stream=sys.stdout)
+    s_handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
+    logger.setLevel(logging.INFO)
+    logger.addHandler(s_handler)
+    NerdFontPatcher.logger = logger
 
     # NerdFontPatcher.patch(font)
     args = argparse.Namespace()
 
     # complete all options
-    args.complete = True
-    args.fontawesome = True
+    args.complete = True # True
+    args.fontawesome = True # True
     args.fontawesomeextension = True
     args.fontlogos = True
     args.octicons = True
@@ -31,11 +33,11 @@ def callPatcher(font):
     args.pomicons = True
     args.powerline = True
     args.powerlineextra = True
-    args.material = True
+    args.material = True #True
     args.weather = True
     args.nonmono = False
-    args.progressbars = True
-    args.quiet = False
+    args.progressbars = False # True
+    args.quiet = True # False
     args.adjustLineHeight = False
     args.careful = True
     args.single = False
@@ -87,9 +89,15 @@ def callPatcher(font):
 
 selFlag = ("more","ranges","unicode")
 
-def postScript(font,deselectOriginalGlyphs,baseSize):
+def postScript(font,deselectOriginalGlyphs,baseSize,oldGlyphs):
     # Termux, Vscode 등에서 정의된 크기에 따라
     # 폰트 크기를 맞춥니다
+
+    def resize():
+        Utility.scale(font=font,targetScale=0.85)
+        Utility.width(font=font,targetWidth=baseSize*2)
+        Utility.translate(font=font,targetY=40)
+        Utility.centerX(font=font,targetWidth=baseSize*2)
 
     # 일반 크기
     font.selection.none()
@@ -98,18 +106,14 @@ def postScript(font,deselectOriginalGlyphs,baseSize):
     font.selection.select(selFlag,0xF8FF,0xF8FF)
     font.selection.select(selFlag,0xF0001,0xF1AF0)
     deselectOriginalGlyphs(font)
-    Utility.setWidthWithSavingPosition(
-        font=font,targetWidth=baseSize*2
-    )
+    resize()
     Utility.width(font=font,targetWidth=baseSize)
 
     # 2배 크기
     font.selection.none()
     font.selection.select(selFlag,0xF8FF,0xFAD9)
     deselectOriginalGlyphs(font)
-    Utility.setWidthWithSavingPosition(
-        font=font,targetWidth=baseSize*2
-    )
+    resize()
 
     # 몰라 그냥 다 2배로
     # font.selection.none()
@@ -123,15 +127,17 @@ def build(target,deselectOriginalGlyphs,NerdFontsAdjust=True,baseSize=550,weight
     # 용량적 이유로 Regular 폰트에만 패치를 적용함
     if weightStr != "Regular": return
 
+    oldGlyphs = [glyph.unicode for glyph in target.glyphs()]
     print("Patching: NerdFonts")
 
     # NerdFonts 공식 패처를 수행함
-    print("    Calling NerdFonts Patcher . . .",flush=True)
-    callPatcher(target)
-    print("\x1b[2K\r    [OK]")
+    print("    Running NerdFonts Patcher . . .",flush=True,end="")
+    callPatcher(target,baseSize)
+    # print("\x1b[2K\r    [OK]")
+    print(" [OK]")
 
     # 적절한 크기를 위해서 크기조절을 수행함
     if NerdFontsAdjust:
         print("    Adjusting size . . .",end="",flush=True)
-        postScript(target,deselectOriginalGlyphs,baseSize)
+        postScript(target,deselectOriginalGlyphs,baseSize,oldGlyphs)
         print(" [OK]")

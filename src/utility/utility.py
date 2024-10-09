@@ -15,3 +15,15 @@ def width(font,targetWidth):
 def scale(font,targetScale):
     font.transform(psMat.scale(targetScale))
     font.round()
+
+def translate(font,targetX=0,targetY=0):
+    font.transform(psMat.translate(targetX,targetY))
+
+def centerX(font,targetWidth):
+    for glyph in font.selection.byGlyphs:
+        xmin,ymin, xmax,ymax = glyph.boundingBox()
+        glyphWidth = xmax - xmin
+        padding = (targetWidth - glyphWidth)//2
+        foreground = glyph.foreground
+        foreground.transform(psMat.translate(padding-xmin,0))
+        glyph.foreground = foreground
